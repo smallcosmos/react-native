@@ -9,12 +9,20 @@ class Home extends React.Component {
   render() {
     const { navigate } = this.props.navigation;
     return (
-      <Button
-        title="Go to BaseComponent"
-        onPress={() =>
-          navigate('BaseComponent', { from: 'Home' })
-        }
-      />
+      <View>
+        <Button
+          title="Go to BaseComponents"
+          onPress={() =>
+            navigate('BaseComponents', { from: 'Home' })
+          }
+        />
+        <Button
+          title="Go to Image"
+          onPress={() =>
+            navigate('ImageComponent', { from: 'Home' })
+          }
+        />
+      </View>
     );
   }
 }

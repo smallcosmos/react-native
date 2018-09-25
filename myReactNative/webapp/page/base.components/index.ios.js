@@ -5,10 +5,11 @@ import {Alert, Platform,
   TouchableWithoutFeedback, View, ScrollView,
   FlatList, SectionList
 } from 'react-native';
+import FadeInView from './fadein.view/index';
 
-class BaseComponent extends Component {
+class BaseComponents extends Component {
   static navigationOptions = {
-    title: 'BaseComponent',
+    title: 'BaseComponents',
   };
   _onPressButton() {
     Alert.alert('You tapped the button!')
@@ -23,7 +24,9 @@ class BaseComponent extends Component {
     const route = state.params || {};
     return (
       <ScrollView style={styles.container}>
-        <Text>This is from {route.from}</Text>
+        <FadeInView>
+          <Text>This is from {route.from}</Text>
+        </FadeInView>
         <TouchableHighlight onPress={this._onPressButton} underlayColor="white">
           <View style={styles.button}>
             <Text style={styles.buttonText}>TouchableHighlight</Text>
@@ -112,4 +115,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default BaseComponent;
+export default BaseComponents;
